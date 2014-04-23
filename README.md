@@ -1,7 +1,7 @@
 getting_and_cleaning_data
 =========================
 
-## This repo contains two files
+## This repo contains two files:
 ### run_analysis.R
 * Downloads the original data in zip format, transforms the data into a tidy data set, and then write that data set to a file in the current working directory
 
