@@ -62,9 +62,12 @@ for(i in seq_along(splits)) {
   sp = splits[[i]]  
   results[[i]] = colMeans(sp[,1:66])
 }
+subj_act = cbind(subject_id, activity_id)
+subj_act = merge(subj_act, activity_labels, by.x="activity_id", by.y="activity_code")
 results = as.data.frame(do.call("rbind", results))
-results = cbind(subject_id, activity_id, results)
+results = cbind(subj_act, results)
 results = results[complete.cases(results),]
+
 
 # the resulting tidy dataset is then written to the current 
 # working directory as a csv file, though with a "txt" extension
